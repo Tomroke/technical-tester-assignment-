@@ -1,0 +1,17 @@
+{
+  "name": "Meepo technical tester assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:test-header": "cypress run --headed --no-exit",
+    "cypress:test-headless": "cypress run",
+    "cypress:open": "cypress open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.3.3",
+    "typescript": "^5.2.2"
+  }
+}
