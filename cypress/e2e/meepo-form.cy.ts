@@ -1,5 +1,5 @@
 describe('Meepo form', () => {
-  it.skip('Meepo form should exist', () => {
+  it('Meepo form should exist', () => {
     cy.visitForm();
 
     cy.get('.F9yp7e')
@@ -57,7 +57,7 @@ describe('Meepo form', () => {
         });
   });
 
-  it.skip('Verify required form validation', async () => {
+  it('Verify required form validation', async () => {
     cy.visitForm();
 
       cy.get('.lRwqcd')
