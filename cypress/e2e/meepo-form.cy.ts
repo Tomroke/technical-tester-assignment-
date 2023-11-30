@@ -15,7 +15,7 @@ describe('Meepo form', () => {
         .contains('Nästa');
   });
 
-  it('Fill out first form page correctly', async () => {
+  it.only('Fill out first form page correctly', async () => {
     cy.visitForm();
 
     cy.get('.lRwqcd > .uArJ5e > .l4V7wb')
@@ -28,31 +28,44 @@ describe('Meepo form', () => {
               .should('exist')
               .contains('Lägg till anställd');
 
-          cy.get(':nth-child(2) > [jsmodel="CP1oW"] > .geS5n > .AgroKb > .rFrNMe > .aCsJod')
-              .should('exist')
-              .find('input')
-              .type('Tommy');
+          // cy.get(':nth-child(2) > [jsmodel="CP1oW"] > .geS5n > .AgroKb > .rFrNMe > .aCsJod')
+          //     .should('exist')
+          //     .find('input')
+          //     .type('Tommy');
+          //
+          // cy.get(':nth-child(3) > [jsmodel="CP1oW"] > .geS5n > .AgroKb > .rFrNMe > .aCsJod')
+          //     .should('exist')
+          //     .find('input')
+          //     .type('Irving')
 
-          cy.get(':nth-child(3) > [jsmodel="CP1oW"] > .geS5n > .AgroKb > .rFrNMe > .aCsJod')
-              .should('exist')
-              .find('input')
-              .type('Irving')
+          // cy.get('.Xb9hP').contains('.whsOnd.zHQkBf')
+          //     .should('exist')
+          //     .find('input')
+          //     .type('1991-12-08');
 
-          cy.get(':nth-child(4) > [jsmodel="CP1oW"] > .geS5n')
-              .should('exist')
-              .find('input')
-              .type('1991-12-08');
+            cy.get('.KKjvXb').click({});
 
-          const dropdownMeny = cy.get(':nth-child(5) > [jsmodel="CP1oW"] > .geS5n')
-              .should('contain', 'Ja')
-              .should('contain', 'Nej')
-              .find('.KKjvXb');
-            dropdownMeny.click();
+            cy.get('.MocG8c.HZ3kWc.mhLiyf.OIC90c.LMgvRb')
+                .find('.vRMGwf.oJeWuf')
+                .each(($el, index, $list) => {
 
-            const dropdownYes = cy.get(':nth-child(5) > [jsmodel="CP1oW"] > .geS5n')
-                .should('contain', 'Nej')
-                .filter('button');
-            dropdownYes.click();
+                  if ($el.text() === 'Ja') {
+                    cy.wrap($el).click();
+                  }else {
+                    cy.log('Searching');
+                  }
+                });
+
+          // const dropdownMeny = cy.get(':nth-child(5) > [jsmodel="CP1oW"] > .geS5n')
+          //     .should('contain', 'Ja')
+          //     .should('contain', 'Nej')
+          //     .find('.KKjvXb');
+          //   dropdownMeny.click();
+          //
+          //   const dropdownYes = cy.get(':nth-child(5) > [jsmodel="CP1oW"] > .geS5n')
+          //       .should('contain', 'Nej')
+          //       .filter('button');
+          //   dropdownYes.click();
 
         });
   });
